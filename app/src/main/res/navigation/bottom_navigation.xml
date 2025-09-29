@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.myshop.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.myshop.CardFragment"
@@ -19,5 +23,58 @@
         android:id="@+id/profileFragment"
         android:name="com.example.myshop.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.myshop.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <argument
+            android:name="productName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Belum diisi" />
+        <action
+            android:id="@+id/action_checkoutFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.example.myshop.AddressFragment"
+        android:label="fragment_address"
+        tools:layout="@layout/fragment_address" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.myshop.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_editFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment" />
+        <argument
+            android:name="Name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Input nama" />
+        <argument
+            android:name="NIM"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Input NIM" />
+        <argument
+            android:name="Province"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Input Provinsi" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAddressFragment"
+        android:name="com.example.myshop.EditAddressFragment"
+        android:label="fragment_edit_address"
+        tools:layout="@layout/fragment_edit_address"
+        />
 </navigation>
